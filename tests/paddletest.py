@@ -82,6 +82,7 @@ def tensor_projective_measurement(rho):
 
 
 
+
     # # Calculate the probability and post-measurement states
     # for result in [0, 1]:
     #     basis_dagger = t(conj(basis_list[result]))
@@ -170,5 +171,12 @@ def tensor_projective_measurement(rho):
 
 
 
-# n = 5
-# rho = random_rho_matrix(n)
+n = 5
+beta = 0.1
+rho = random_rho_matrix(n)
+Bell_state = depolarized_Bell_state(beta)
+
+
+
+
+
