@@ -1,6 +1,6 @@
-from qobject import State, zeroState, oneState
-from qobject import CNOT
-from simulator import permuteSystems, permuteToFront, nKron
+from backend.np.qobject import State, zeroState, oneState
+from backend.np.qobject import CNOT
+from backend.np.simulator import permuteSystems, permuteToFront, nKron
 
 dim = 3
 Zeros = nKron([zeroState(), zeroState(), oneState()])

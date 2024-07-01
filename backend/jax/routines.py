@@ -1,6 +1,6 @@
-from qobject import I, CNOT, H, zeroState
-from simulator import toProjector, nKron, operateVector
-from qobject import State
+from backend.jax.qobject import CNOT, H, zeroState
+from backend.jax.simulator import nKron, operateVector
+from backend.jax.qobject import State
 
 def prepareBellStateMatrix():
     n = 2
@@ -10,6 +10,8 @@ def prepareBellStateMatrix():
     for gate in gateList:
         BellState = operateVector(BellState, gate)
     return BellState
+
+
 
 
 

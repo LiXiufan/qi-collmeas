@@ -1,8 +1,9 @@
 from numpy import kron, log2, trace
 from numpy import transpose, conj, identity, real
-from qobject import State
-from qobject import I, X, Z
+from backend.np.qobject import State
+from backend.np.qobject import I, Z
 from numpy import random
+from scipy.linalg import sqrtm
 
 def toProjector(vector):
     return vector @ transpose(conj(vector))
@@ -98,6 +99,8 @@ def basisToObservable(basisInt):
     else:
         raise ValueError()
 
+def calculateFidelity(rho1, rho2):
+    return real(trace(sqrtm(sqrtm(rho1) @ rho2 @ sqrtm(rho1))) ** 2)
 
 
 
